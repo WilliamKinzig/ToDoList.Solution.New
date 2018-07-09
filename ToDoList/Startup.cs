@@ -40,11 +40,18 @@ namespace ToDoList
         routes.MapRoute(
         name: "default",
         template: "{controller=Home}/{action=Index}/{id?}");
-      });
-      app.Run(async (context) =>
-      {
-        await context.Response.WriteAsync("Hello World!");
-      });
+        });
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync("Hello World!");
+            });
+
+
+        }
     }
-  }
+    
+    public static class DBConfiguration
+    {
+        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";
+    }
 }
